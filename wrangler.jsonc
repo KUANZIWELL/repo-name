@@ -1,9 +1,11 @@
 {
-  "name": "repo-name", // 自定义 Worker 名称（必填）
-  "compatibility_date": "2025-05-28", // 固定为当前日期（必填）
-  "main": "src/index.js", // 指定 Worker 脚本入口文件路径（根据实际结构调整）
-  "route": "your-domain.com/*", // 可选：绑定自定义域名路由
-  "vars": {
-    // 可选：环境变量（如 API 密钥）
+  "name": "repo-name", // Worker 名称
+  "compatibility_date": "2025-05-28", // 必填，与部署时的日期一致
+  "main": "script.js", // ✅ 指定 Worker 脚本入口（仓库中的 script.js）
+  "route": "your-domain.com/*", // 可选：绑定自定义域名（需替换为实际域名）
+  "env": {
+    "development": {
+      "EXCEL_URL": "https://raw.githubusercontent.com/KUANZIWELL/repo-name/main/date.xlsx" // 可选：环境变量存储 Excel 路径
+    }
   }
 }
